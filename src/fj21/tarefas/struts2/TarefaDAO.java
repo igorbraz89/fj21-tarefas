@@ -45,6 +45,25 @@ public class TarefaDAO {
 		this.connection.close();
 		System.out.println("conex�o encerrada");
 	}
+	public void remove(Tarefa tarefa) throws SQLException {
+		this.connection = new ConnectionFactory().getConnection();
+		// cria um preparedStatement
+		
+		String sql_delete="DELETE FROM tarefas WHERE Id="+tarefa.getId();
+		PreparedStatement stmt_delete = this.connection
+				.prepareStatement(sql_delete);
+		// preenche os valores
+		
+		System.out.println(tarefa.getDataFinalizado());
+		// executa
+		stmt_delete.execute();
+
+		stmt_delete.close();
+		System.out.println("Gravado!");
+
+		this.connection.close();
+		System.out.println("conex�o encerrada");
+	}
 
 	public List<Tarefa> getLista() {
 		this.connection = new ConnectionFactory().getConnection();

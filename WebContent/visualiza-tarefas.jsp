@@ -1,15 +1,20 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@include file="topo.jsp"%>
 <%@include file="menu.jsp"%>
 <br />
 <br />
 <h3>VISUALIZA TAREFAS</h3>
-<form action="visualizaTarefa" method="post">
-	<input type="hidden" name="ok"> <input type="submit"
-		value="Visualizar">
+<form action="visualizaTarefa" method="get">
+	<input type="hidden" name="ok">
+	<input type="submit" value="Visualizar">
+</form>
+<form action="removerTarefa" method="post">
+	<input type="hidden" name="remove">
+	ID: <input type="text" name="tarefa.id">
+	<input type="submit" value="Remover">
 </form>
 <br />
 <table border="0">
