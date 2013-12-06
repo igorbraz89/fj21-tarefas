@@ -10,7 +10,7 @@
 			  url: "finalizaTarefa?id="+id,
 			  data: "",
 			  success: function(data) {
-				  alert("Clique no botão visualizar");
+				  location.reload();
 			  }
 			});
 	}

@@ -22,5 +22,4 @@
 				String mensagem = "Bem vindo ao sistema de gerenciamento de tarefas";
 			%>
 			<%=mensagem%><br /><br /><br /><br /><br />
-		<div align="right"><a href="http://localhost:8080/fj21-tarefas/login.jsp" >Login</a></div>
 		</div>
