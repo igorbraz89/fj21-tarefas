@@ -10,8 +10,7 @@
 				<td><a
 				href="http://localhost:8080/fj21-tarefas/altera-tarefas.jsp"
 				target="centro">Altera</a></td>
+		
 		</tr>
 	</table>
-
 </div>
-
