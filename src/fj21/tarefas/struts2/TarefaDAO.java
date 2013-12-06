@@ -5,9 +5,7 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 
 public class TarefaDAO {
@@ -59,6 +57,53 @@ public class TarefaDAO {
 		stmt_delete.execute();
 
 		stmt_delete.close();
+		System.out.println("Gravado!");
+
+		this.connection.close();
+		System.out.println("conex�o encerrada");
+	}
+	public void altera(Tarefa tarefa) throws SQLException {
+		this.connection = new ConnectionFactory().getConnection();
+		// cria um preparedStatement
+		int finalizado;
+		finalizado=tarefa.isFinalizado()?1:0; 
+		Date date = new Date(tarefa.getDataFinalizado().getTime());
+		
+		String sql_altera = "UPDATE tarefas SET finalizado='"
+				+ finalizado+ "'," + " descricao='" + tarefa.getDescricao()
+				+ "'," + " dataFinalizacao='" + date + "'"
+				+ " WHERE Id='" + tarefa.getId() + "'";
+
+		System.out.println("id->>>>" + tarefa.getId());
+		System.out.println(sql_altera);
+		PreparedStatement stmt_update = this.connection
+				.prepareStatement(sql_altera);
+
+		// executa
+		stmt_update.execute();
+
+		stmt_update.close();
+		System.out.println("Gravado!");
+
+		this.connection.close();
+		System.out.println("conex�o encerrada");
+	}
+	public void finaliza(Long id) throws SQLException {
+		this.connection = new ConnectionFactory().getConnection();
+		// cria um preparedStatement
+		final Long FINALIZADO=1l;
+		String sql_finaliza = "UPDATE tarefas SET finalizado='"
+				+ FINALIZADO+"'"+ " WHERE Id='" + id + "'";
+
+		System.out.println("id->>>>" + id);
+		System.out.println(sql_finaliza);
+		PreparedStatement stmt_update = this.connection
+				.prepareStatement(sql_finaliza);
+
+		// executa
+		stmt_update.execute();
+
+		stmt_update.close();
 		System.out.println("Gravado!");
 
 		this.connection.close();
