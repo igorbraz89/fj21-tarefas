@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package name="default" extends="struts-default">
+	<interceptors>
+		<interceptor name="login"
+			class="fj21.tarefas.struts2.interceptor.LoginInterceptor"></interceptor>
+	</interceptors>
+	<global-results>
+		<result name="naoLogado">/login.jsp</result>
+	</global-results>
+</package>
