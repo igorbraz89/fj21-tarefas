@@ -8,9 +8,8 @@ import com.opensymphony.xwork2.ActionContext;
 
 public class AutorizadorAction {
 	private Usuario usuario;
-	
 	@Action(value = "login", results = { @Result(name = "ok", location = "/visualiza-tarefas.jsp"),
-										 @Result(name = "invalido", location = "/login.jsp")
+										 @Result(name = "naoLogado", location = "/login.jsp")
 	})
 	public String login() throws SQLException {
 		if (new UsuarioDAO().existeUsuario(this.usuario)){
