@@ -2,7 +2,6 @@ package fj21.tarefas.struts2;
 import java.sql.SQLException;
 
 import org.apache.struts2.convention.annotation.Action;
-import org.apache.struts2.convention.annotation.InterceptorRef;
 import org.apache.struts2.convention.annotation.Result;
 
 public class RemoveTarefasAction {
