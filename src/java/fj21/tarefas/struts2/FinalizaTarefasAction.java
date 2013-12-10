@@ -4,8 +4,9 @@ import java.sql.SQLException;
 
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.InterceptorRef;
+import org.apache.struts2.convention.annotation.Namespace;
 import org.apache.struts2.convention.annotation.Result;
-
+@Namespace(value="/")
 public class FinalizaTarefasAction {
 	private Long id;
 

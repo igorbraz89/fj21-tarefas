@@ -7,7 +7,7 @@
 	src="http://code.jquery.com/jquery-1.3.2.min.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Tarefas Caelum</title>
-<link href="estilo.css" rel="stylesheet" type="text/css" media="screen">
+<link href="/WEB-INF/views/estilo.css" rel="stylesheet" type="text/css" media="screen">
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 </head>
 <body>

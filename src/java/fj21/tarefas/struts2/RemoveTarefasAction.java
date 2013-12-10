@@ -2,8 +2,9 @@ package fj21.tarefas.struts2;
 import java.sql.SQLException;
 
 import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.Namespace;
 import org.apache.struts2.convention.annotation.Result;
-
+@Namespace(value="/")
 public class RemoveTarefasAction {
 	private Tarefa tarefa;
 	@Action(value = "removerTarefa", results = { @Result(name = "remove", location = "/visualiza-tarefas.jsp")})

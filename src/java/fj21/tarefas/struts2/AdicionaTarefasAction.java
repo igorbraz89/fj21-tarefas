@@ -8,7 +8,7 @@ import org.apache.struts2.convention.annotation.Namespace;
 import org.apache.struts2.convention.annotation.ParentPackage;
 import org.apache.struts2.convention.annotation.Result;
 
-@ParentPackage("default")
+
 @Namespace(value="/")
 public class AdicionaTarefasAction {
 	private Tarefa tarefa;
