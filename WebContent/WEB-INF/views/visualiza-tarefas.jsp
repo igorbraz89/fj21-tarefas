@@ -20,17 +20,6 @@
 </script>
 <%@include file="menu.jsp"%>
 <br />
-<br />
-<br />
-<form action="visualizaTarefa" method="post">
-	<input type="submit" value="Visualizar">
-</form>
-<br />
-<form action="removerTarefa" method="post">
-	<input type="hidden" name="remove"> ID: <input type="text"
-		name="tarefa.id"> <input type="submit" value="Remover">
-</form>
-<br />
 <table border="0">
 	<tr align="center" bgcolor=#add8e6>
 		<th>&nbsp;&nbsp;&nbsp;</th>
@@ -45,6 +34,7 @@
 		<tr>
 			<td bgcolor=#add8e6></td>
 			<td align="center">${tarefa.id}</td>
+
 			<c:if test="${tarefa.finalizado eq false}">
 				<td align="center">N&atilde;o</td>
 			</c:if>
@@ -63,9 +53,20 @@
 					<td></td>
 				</c:otherwise>
 			</c:choose>
-			<td bgcolor=#add8e6></td>
+			
+			<td bgcolor=#add8e6 align="center">
+			<form action="removerTarefa" method="post">
+			<input type="hidden" name="tarefa.id" value="${tarefa.id}"> <input type="submit"
+					style="color:red" value=" X "></form>
+			</td>
+			<td bgcolor=#add8e6 align="center">
+			<form action="update" method="get">
+			<input type="hidden" name="tarefa.id" value="${tarefa.id}"> <input type="submit"
+					style="color:blue" value="Edit"></form>
+			</td>
 		</tr>
 	</c:forEach>
 </table>
+<br />
 <input TYPE="BUTTON" NAME="ok" value="Imprimir" onclick="Imprime()"></input>
 <%@include file="rodape.jsp"%>

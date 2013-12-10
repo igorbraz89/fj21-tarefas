@@ -4,12 +4,9 @@
 	<table>
 		<tr>
 			<td><a href="home" target="_self">Home - </a></td>
-			<td><a href="nova" target="_self">Adiciona - </a></td>
-			<td><a href="http://localhost:8080/fj21-tarefas/visualizaTarefa"
-				target="centro">Visualiza - </a></td>
-			<td><a href="http://localhost:8080/fj21-tarefas/alteraTarefa"
-				target="centro">Altera</a></td>
-
+			<td><a href=save target="_self">Adiciona - </a></td>
+			<td><a href="list"
+				target="centro">Visualiza</a></td>
 		</tr>
 	</table>
 </div>

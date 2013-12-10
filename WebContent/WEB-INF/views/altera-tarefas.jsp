@@ -5,7 +5,7 @@
 	<br />
 	<div id="centro">
 		<form action="alteraTarefa" method="post">
-	id (a ser alterado): 				<input type="text" name="tarefa.id" /><br />
+										<input type="hidden" name="tarefa.id" value="${tarefa.id}">	
 	Evento finalizado?:					<input type="checkbox" name="tarefa.finalizado" value="true" /><br /> 
 	Data de Finaliza&ccedil;&atilde;o:	<input type="date"
 										name="tarefa.dataFinalizado" /><br /> Descri&ccedil;&atilde;o:<br />

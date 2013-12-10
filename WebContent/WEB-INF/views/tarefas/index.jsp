@@ -3,6 +3,6 @@
 	<%@include file="/WEB-INF/views/topo.jsp"%>
 <%@include file="/WEB-INF/views/menu.jsp"%>
 <div id="centro">
-<h1>TODAS AS TAREFAS</h1>
+<h1>TAREFAS</h1>
 </div>
 <%@include file="/WEB-INF/views/rodape.jsp"%>
