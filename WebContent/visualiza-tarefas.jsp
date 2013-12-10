@@ -22,7 +22,7 @@
 <br />
 <br />
 <br />
-<form action="visualizaTarefa" method="get">
+<form action="visualizaTarefa" method="post">
 	<input type="submit" value="Visualizar">
 </form>
 <br />

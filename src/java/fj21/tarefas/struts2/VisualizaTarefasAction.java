@@ -4,10 +4,12 @@ import java.sql.SQLException;
 import java.util.List;
 
 import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.Namespace;
 import org.apache.struts2.convention.annotation.ParentPackage;
 import org.apache.struts2.convention.annotation.Result;
 
-//@ParentPackage("default")
+@Namespace(value="/")
+@ParentPackage("default")
 public class VisualizaTarefasAction {
 	private List<Tarefa> tarefas;
 
