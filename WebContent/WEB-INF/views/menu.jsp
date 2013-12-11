@@ -6,7 +6,7 @@
 			<td><a href="home" target="_self">Home - </a></td>
 			<td><a href=save target="_self">Adiciona - </a></td>
 			<td><a href="list"
-				target="centro">Visualiza</a></td>
+				target="_self">Visualiza</a></td>
 		</tr>
 	</table>
 </div>

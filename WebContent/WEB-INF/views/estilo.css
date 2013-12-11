@@ -73,3 +73,7 @@ a:link, a:visited, a:hover, a:active {
 #color{
 	color:#FFFFFF; 
 }
+h1{
+  font: 32px/42px trajan-pro-1,trajan-pro-2;
+  text-align: center;
+}

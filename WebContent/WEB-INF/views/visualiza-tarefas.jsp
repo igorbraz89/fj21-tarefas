@@ -20,6 +20,7 @@
 </script>
 <%@include file="menu.jsp"%>
 <br />
+<div id="centro">
 <table border="0">
 	<tr align="center" bgcolor=#add8e6>
 		<th>&nbsp;&nbsp;&nbsp;</th>
@@ -29,6 +30,8 @@
 		<th>Data de Finaliza&ccedil;&atilde;o</th>
 		<th>&nbsp;&nbsp;&nbsp;</th>
 		<th>&nbsp;&nbsp;&nbsp;</th>
+		<th>&nbsp;&nbsp;&nbsp;</th>
+
 	</tr>
 	<c:forEach items="${tarefas}" var="tarefa">
 		<tr>
@@ -53,20 +56,23 @@
 					<td></td>
 				</c:otherwise>
 			</c:choose>
-			
+
 			<td bgcolor=#add8e6 align="center">
-			<form action="removerTarefa" method="post">
-			<input type="hidden" name="tarefa.id" value="${tarefa.id}"> <input type="submit"
-					style="color:red" value=" X "></form>
+				<form action="removerTarefa" method="post">
+					<input type="hidden" name="tarefa.id" value="${tarefa.id}">
+					<input type="submit" style="color: red" value=" X ">
+				</form>
 			</td>
 			<td bgcolor=#add8e6 align="center">
-			<form action="update" method="get">
-			<input type="hidden" name="tarefa.id" value="${tarefa.id}"> <input type="submit"
-					style="color:blue" value="Edit"></form>
+				<form action="update" method="get">
+					<input type="hidden" name="tarefa.id" value="${tarefa.id}">
+					<input type="submit" style="color: blue" value="Edit">
+				</form>
 			</td>
 		</tr>
 	</c:forEach>
 </table>
 <br />
 <input TYPE="BUTTON" NAME="ok" value="Imprimir" onclick="Imprime()"></input>
+</div>
 <%@include file="rodape.jsp"%>
