@@ -33,7 +33,6 @@ public class TarefaDAO {
 			finalizado = 1;
 		}
 		stmt_insert.setInt(4, finalizado);
-		System.out.println(tarefa.getDataFinalizado());
 		// executa
 		stmt_insert.execute();
 
@@ -50,9 +49,7 @@ public class TarefaDAO {
 		String sql_delete="DELETE FROM tarefas WHERE Id="+tarefa.getId();
 		PreparedStatement stmt_delete = this.connection
 				.prepareStatement(sql_delete);
-		// preenche os valores
 		
-		System.out.println(tarefa.getDataFinalizado());
 		// executa
 		stmt_delete.execute();
 
@@ -74,8 +71,6 @@ public class TarefaDAO {
 				+ "'," + " dataFinalizacao='" + date + "'"
 				+ " WHERE Id='" + tarefa.getId() + "'";
 
-		System.out.println("id->>>>" + tarefa.getId());
-		System.out.println(sql_altera);
 		PreparedStatement stmt_update = this.connection
 				.prepareStatement(sql_altera);
 
@@ -95,8 +90,6 @@ public class TarefaDAO {
 		String sql_finaliza = "UPDATE tarefas SET finalizado='"
 				+ FINALIZADO+"'"+ " WHERE Id='" + id + "'";
 
-		System.out.println("id->>>>" + id);
-		System.out.println(sql_finaliza);
 		PreparedStatement stmt_update = this.connection
 				.prepareStatement(sql_finaliza);
 
