@@ -71,8 +71,5 @@
 	</c:forEach>
 </table>
 <br />
-<form action="list" method="get">
-<input TYPE="submit"  value="Atualizar"></input>
-</form>
 </div>
 <%@include file="rodape.jsp"%>

@@ -4,7 +4,7 @@
 	<%@include file="menu.jsp"%>
 	<br />
 	<div id="centro">
-		<form action="create" method="post">
+		<form action="save" method="post">
 	<!--  id: 								<input type="text" name="tarefa.id" /><br /> -->
 	Evento finalizado?:					<input type="checkbox" name="tarefa.finalizado" value="true" /><br /> 
 	Data de Finaliza&ccedil;&atilde;o:	<input type="date"

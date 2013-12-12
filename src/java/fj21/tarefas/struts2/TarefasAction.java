@@ -36,7 +36,7 @@ public class TarefasAction {
 		return "ok";
 	}
 
-	@Action(value = "save", results = { @Result(name = "ok", type="redirect", location = "/tarefas/home") })
+	@Action(value = "save", results = { @Result(name = "ok", type="redirect", location = "/tarefas/list") })
 	public String save() throws SQLException {
 		new TarefaDAO().adiciona(tarefa);
 		System.out.println("<save> Tarefa adicionada");
