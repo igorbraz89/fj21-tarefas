@@ -32,27 +32,27 @@ public class TarefasAction {
 
 	@Action(value = "create", results = { @Result(name = "ok", location = "/WEB-INF/views/formulario-tarefas.jsp") })
 	public String create() {
-		System.out.println("<save controller> Redirect : /WEB-INF/views/formulario-tarefas.jsp");
+		System.out.println("<create> Abre formulário");
 		return "ok";
 	}
 
 	@Action(value = "save", results = { @Result(name = "ok", type="redirect", location = "/tarefas/home") })
 	public String save() throws SQLException {
 		new TarefaDAO().adiciona(tarefa);
-		System.out.println("Tarefa adicionada");
+		System.out.println("<save> Tarefa adicionada");
 		return "ok";
 	}
 
 	@Action(value = "list", results = { @Result(name = "ok", location = "/WEB-INF/views/visualiza-tarefas.jsp") })
 	public String list() throws SQLException {
 		tarefas = new TarefaDAO().getLista();
-		System.out.println("<visualiza tarefas> Lista criada");
+		System.out.println("<list> Lista criada");
 		return "ok";
 	}
 
 	@Action(value = "edit", results = { @Result(name = "ok", location = "/WEB-INF/views/altera-tarefas.jsp") })
 	public String updateTarefaController() {
-		System.out.println("<update controller> Redirect : /WEB-INF/views/altera-tarefas.jsp");
+		System.out.println("<edit> Abre formulário");
 		return "ok";
 	}
 
