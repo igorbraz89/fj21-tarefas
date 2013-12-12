@@ -14,9 +14,7 @@
 			  }
 			});
 	}
-	function Imprime(){	
-		print();
-	}
+	
 </script>
 <%@include file="menu.jsp"%>
 <br />
@@ -73,6 +71,8 @@
 	</c:forEach>
 </table>
 <br />
-<input TYPE="BUTTON" NAME="ok" value="Imprimir" onclick="Imprime()"></input>
+<form action="list" method="get">
+<input TYPE="submit"  value="Atualizar"></input>
+</form>
 </div>
 <%@include file="rodape.jsp"%>
