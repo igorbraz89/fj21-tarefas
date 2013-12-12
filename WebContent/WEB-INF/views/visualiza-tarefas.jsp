@@ -62,7 +62,7 @@
 				</form>
 			</td>
 			<td bgcolor=#add8e6 align="center">
-				<form action="update" method="get">
+				<form action="edit" method="get">
 					<input type="hidden" name="tarefa.id" value="${tarefa.id}">
 					<input type="submit" style="color: blue" value="Edit">
 				</form>

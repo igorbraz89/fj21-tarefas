@@ -30,13 +30,13 @@ public class TarefasAction {
 		return "ok";
 	}
 
-	@Action(value = "save", results = { @Result(name = "ok", location = "/WEB-INF/views/formulario-tarefas.jsp") })
-	public String novaTarefaController() {
+	@Action(value = "create", results = { @Result(name = "ok", location = "/WEB-INF/views/formulario-tarefas.jsp") })
+	public String create() {
 		System.out.println("<save controller> Redirect : /WEB-INF/views/formulario-tarefas.jsp");
 		return "ok";
 	}
 
-	@Action(value = "adicionaTarefa", results = { @Result(name = "ok", location = "/WEB-INF/views/tarefas/index.jsp") })
+	@Action(value = "save", results = { @Result(name = "ok", type="redirect", location = "/tarefas/home") })
 	public String save() throws SQLException {
 		new TarefaDAO().adiciona(tarefa);
 		System.out.println("Tarefa adicionada");
@@ -50,13 +50,13 @@ public class TarefasAction {
 		return "ok";
 	}
 
-	@Action(value = "update", results = { @Result(name = "ok", location = "/WEB-INF/views/altera-tarefas.jsp") })
+	@Action(value = "edit", results = { @Result(name = "ok", location = "/WEB-INF/views/altera-tarefas.jsp") })
 	public String updateTarefaController() {
 		System.out.println("<update controller> Redirect : /WEB-INF/views/altera-tarefas.jsp");
 		return "ok";
 	}
 
-	@Action(value = "alteraTarefa", results = { @Result(name = "ok", location = "/WEB-INF/views/visualiza-tarefas.jsp") })
+	@Action(value = "update", results = { @Result(name = "ok", type="redirect", location = "/tarefas/list") })
 	public String update() throws SQLException {
 		new TarefaDAO().altera(tarefa);
 		System.out.println("Tarefa alterada");
@@ -71,7 +71,7 @@ public class TarefasAction {
 		return "ok";
 	}
 
-	@Action(value = "removerTarefa", results = { @Result(name = "remove", location = "/WEB-INF/views/visualiza-tarefas.jsp") })
+	@Action(value = "removerTarefa", results = { @Result(name = "remove",type="redirect", location = "/tarefas/list") })
 	public String delete() throws SQLException {
 		new TarefaDAO().remove(tarefa);
 		System.out.println("Tarefa removida");

@@ -16,6 +16,7 @@ public class TarefaDAO {
 	}
 
 	public void adiciona(Tarefa tarefa) throws SQLException {
+		long numberOfRows = 0;
 		this.connection = new ConnectionFactory().getConnection();
 		// cria um preparedStatement
 		String sql_insertIntoContatos = "insert into Tarefas"
@@ -24,7 +25,15 @@ public class TarefaDAO {
 		PreparedStatement stmt_insert = this.connection
 				.prepareStatement(sql_insertIntoContatos);
 		// preenche os valores
-		stmt_insert.setLong(1, tarefa.getId());
+		String maxid="SELECT * from tarefas";
+		PreparedStatement stmt_insertId = this.connection
+				.prepareStatement(maxid);
+		ResultSet rs = stmt_insertId.executeQuery();
+		while(rs.next()){
+		 numberOfRows=(long) rs.getRow();
+		}
+		stmt_insertId.close();
+		stmt_insert.setLong(1, (++numberOfRows));
 		stmt_insert.setString(2, tarefa.getDescricao());
 		Date date = new Date(tarefa.getDataFinalizado().getTime());
 		stmt_insert.setDate(3, date);
@@ -35,8 +44,8 @@ public class TarefaDAO {
 		stmt_insert.setInt(4, finalizado);
 		// executa
 		stmt_insert.execute();
-
 		stmt_insert.close();
+		rs.close();
 		System.out.println("Gravado!");
 
 		this.connection.close();
